@@ -12,6 +12,11 @@ public class WebExceptionAdvice {
     @ExceptionHandler(RuntimeException.class)
     public Result handleRuntimeException(RuntimeException e) {
         log.error(e.toString(), e);
-        return Result.fail("服务器异常");
+        return Result.fail(e.getMessage());
+    }
+    @ExceptionHandler(BaseException.class)
+    public Result handleRuntimeException(BaseException e) {
+        log.error(e.getMessage());
+        return Result.fail(e.getMessage());
     }
 }
