@@ -67,7 +67,7 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
         return Result.ok(cacheData.getData());
 
     }
-
+    @Transactional
     public void save(Long id){
         Shop shopInfo = getOne(new QueryWrapper<Shop>().eq("id", id));
         if (shopInfo != null) {
