@@ -1,5 +1,6 @@
 package com.hmdp.config;
 
+import com.hmdp.utils.APItimeInterceptor;
 import com.hmdp.utils.LoginInterceptor;
 import com.hmdp.utils.RefreshInterceptor;
 import org.springframework.context.annotation.Configuration;
@@ -30,5 +31,8 @@ public class MVCconfig implements WebMvcConfigurer {
                         "/user/code",
                         "/user/login"
                 );
+        registry.addInterceptor(new APItimeInterceptor())
+                .order(0)
+                .addPathPatterns("/**");
     }
 }
