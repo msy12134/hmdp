@@ -81,6 +81,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
             lock.unlock();
         }
     }
+    // 删除一张秒杀券，然后创建相应订单
     @Transactional
     public Result createVoucherOrder(Long voucherId, Long userId) {
         // 扣减库存，使用乐观锁
