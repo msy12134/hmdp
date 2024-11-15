@@ -33,7 +33,7 @@ public class ShopController {
      */
     @GetMapping("/{id}")
     public Result queryShopById(@PathVariable("id") Long id) throws InterruptedException {
-        return shopService.queryShopById2(id);
+        return shopService.queryShopById(id);
     }
 
     /**

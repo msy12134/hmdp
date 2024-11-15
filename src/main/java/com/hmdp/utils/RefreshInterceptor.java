@@ -12,7 +12,7 @@ public class RefreshInterceptor implements HandlerInterceptor {
         if (UserHolder.getUser()!=null){
             return true;
         }else{
-            response.setStatus(401);
+            response.setStatus(408);
             return false;
         }
     }
