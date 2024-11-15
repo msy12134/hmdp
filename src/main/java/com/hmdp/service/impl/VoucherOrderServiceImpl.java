@@ -74,6 +74,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
             if (count1 > 0) {
                 return Result.fail("每人只能秒杀一次");
             }
+            //防止事务失效，所以使用代理对象调用创建订单的方法createVoucherOrder
             IVoucherOrderService proxy = applicationContext.getBean(IVoucherOrderService.class);
             return proxy.createVoucherOrder(voucherId, userId);
         }
