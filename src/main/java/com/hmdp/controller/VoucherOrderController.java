@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 
 /**
  * <p>
@@ -25,8 +26,8 @@ public class VoucherOrderController {
     @Resource
     public IVoucherOrderService voucherOrderService;
     @PostMapping("seckill/{id}")
-    public Result seckillVoucher(@PathVariable("id") Long voucherId) throws InterruptedException {
+    public Result seckillVoucher(@PathVariable("id") Long voucherId) throws InterruptedException, IOException {
 
-        return voucherOrderService.seckillVoucher(voucherId);
+        return voucherOrderService.seckillVoucherVersion2(voucherId);
     }
 }

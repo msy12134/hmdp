@@ -1,6 +1,18 @@
 server:
   port: 8081
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    template:
+      exchange: seckill-exchange
+      routing-key: seckill.order
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
   application:
     name: hmdp
   datasource:

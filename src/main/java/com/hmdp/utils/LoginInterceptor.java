@@ -41,7 +41,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         UserHolder.saveUser(userDTO);
 
         // 刷新token的过期时间
-        stringRedisTemplate.expire("login:token:" + token, 30, TimeUnit.MINUTES);
+//        stringRedisTemplate.expire("login:token:" + token, 30, TimeUnit.MINUTES);
         return true;
     }
 

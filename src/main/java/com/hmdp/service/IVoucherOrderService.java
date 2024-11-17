@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.hmdp.dto.Result;
 import com.hmdp.entity.VoucherOrder;
 
+import java.io.IOException;
+
 /**
  * <p>
  *  服务类
@@ -14,7 +16,10 @@ import com.hmdp.entity.VoucherOrder;
  */
 public interface IVoucherOrderService extends IService<VoucherOrder> {
 
-    Result seckillVoucher(Long voucherId) throws InterruptedException;
+    Result seckillVoucherVersion1(Long voucherId) throws InterruptedException;
+
+    Result seckillVoucherVersion2(Long voucherId) throws InterruptedException, IOException;
+
 
     Result createVoucherOrder(Long voucherId, Long userId);
 }
